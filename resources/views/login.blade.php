@@ -15,6 +15,11 @@
                 <div class="card-header text-center">
                     <h4>Login Form</h4>
                 </div>
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{session('error')}}
+                    </div>
+                @endif
                 <div class="card-body">
                     <form action="{{ url('login') }}" method="POST">
                         @csrf

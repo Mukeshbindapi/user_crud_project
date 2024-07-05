@@ -20,32 +20,50 @@
                         @csrf
                         <div class="mb-3">
                             <label for="first_name" class="form-label">first_name</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
+                            <input type="text" class="form-control @error('first_name') is_invalid @enderror" id="first_name" name="first_name" placeholder="Enter your first name">
+                            @error('first_name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="last_name" class="form-label">last_name</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name">
+                            <input type="text" class="form-control @error('last_name') is_invalid @enderror" id="last_name" name="last_name" placeholder="Enter your last name">
+                            @error('last_name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                            <input type="email" class="form-control @error('email') is_invalid @enderror" id="email" name="email" placeholder="Enter your email">
+                            @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                            <input type="password" class="form-control @error('password') is_invalid @enderror" id="password" name="password" placeholder="Enter your password">
+                            @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="gender" class="form-label">Gender</label>
+                            <label for="gender" class="form-label @error('password') is_invalid @enderror">Gender</label>
                             <select class="form-select" id="gender" name="gender">
                                 <option value="" disabled selected>Select your gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="other">Other</option>
                             </select>
+                            @error('gender')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="mobile_no" class="form-label">Phone</label>
-                            <input type="tel" class="form-control" id="mobile_no" name="mobile_no" placeholder="Enter your phone number">
+                            <input type="tel" class="form-control @error('mobile_no') is_invalid @enderror" id="mobile_no" name="mobile_no" placeholder="Enter your phone number">
+                            @error('mobile_no')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="terms">

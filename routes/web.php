@@ -21,6 +21,9 @@ Route::prefix('user/')->group(function(){
     Route::get('edit/{id}',[UserController::class,'edit']);
     Route::post('update',[UserController::class,'update']);
     Route::get('delete/{id}',[UserController::class,'delete']);
+    Route::get('show/{id}', [UserController::class, 'show']);
 });
+
+
 
 

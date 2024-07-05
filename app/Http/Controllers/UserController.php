@@ -73,7 +73,8 @@ class UserController extends Controller
         return redirect('user/list');
     }
 
-    public function show(){
-
+    public function show($id) {
+        $user = User::findOrFail($id);
+        return view('show', compact('user'));
     }
 }
